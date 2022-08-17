@@ -1,4 +1,5 @@
 // Inspired by https://openprocessing.org/sketch/804077
+// (It's totally different now)
 
 // Create & configure main canvas
 const mainCanvas = document.getElementById('mainCanvas');
