@@ -70,10 +70,14 @@ function draw() {
     mainCtx.globalAlpha = 0.1 + Math.random() * 0.1;
 
     mainCtx.beginPath();
-        x = Math.sin( (Date.now() / param1) + (r  * Math.PI)) * (mainCanvas.width  / 2);
-        y = Math.cos( (Date.now() / param2) + (r  * Math.PI)) * (mainCanvas.height / 2);
-        x2 = Math.sin((Date.now() / param3) + (r2 * Math.PI)) * (mainCanvas.width  / 2);
-        y2 = Math.cos((Date.now() / param4) + (r2 * Math.PI)) * (mainCanvas.height / 2);
+//        x = Math.sin( (window.performance.now() / param1) + (r  * Math.PI)) * (mainCanvas.width  / 2);
+//        y = Math.cos( (window.performance.now() / param2) + (r  * Math.PI)) * (mainCanvas.height / 2);
+//        x2 = Math.sin((window.performance.now() / param3) + (r2 * Math.PI)) * (mainCanvas.width  / 2);
+//        y2 = Math.cos((window.performance.now() / param4) + (r2 * Math.PI)) * (mainCanvas.height / 2);
+        x = Math.sin( (counter / param1) + (r  * Math.PI)) * (mainCanvas.width  / 2);
+        y = Math.cos( (counter / param2) + (r  * Math.PI)) * (mainCanvas.height / 2);
+        x2 = Math.sin((counter / param3) + (r2 * Math.PI)) * (mainCanvas.width  / 2);
+        y2 = Math.cos((counter / param4) + (r2 * Math.PI)) * (mainCanvas.height / 2);
 
         mainCtx.moveTo(x, y);
         mainCtx.lineTo(-x2, -y2);
