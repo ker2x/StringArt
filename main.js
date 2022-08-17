@@ -31,7 +31,7 @@ function setup() {
     mainCtx.translate(mainCanvas.width / 2, mainCanvas.height / 2);
 
     mainCtx.strokeStyle = 'white';
-    mainCtx.lineWidth = 0.2;
+    mainCtx.lineWidth = 0.1;
     mainCtx.globalAlpha = 0.01;
 
     r = Math.random() * 4;
@@ -43,9 +43,11 @@ function setup() {
     param3 = form.elements[2].value;
     param4 = form.elements[3].value;
     maxCount = form.elements[4].value;
-    alternate = form.elements[5].checked;
+    fade = form.elements[5].value;
+    mainCtx.lineWidth = form.elements[6].value;
+    alternate = form.elements[7].checked;
     counter = 0;
-    console.log(param1, param2, param3, param4, maxCount, alternate);
+    console.log(param1, param2, param3, param4, maxCount, fade, mainCtx.lineWidth, alternate);
 
     requestAnimationFrame(draw);
 }
@@ -57,7 +59,7 @@ function draw() {
         counter = 0;
         r = Math.random() * 4;
         r2 = Math.random() * 4;
-        mainCtx.globalAlpha = 0.05;
+        mainCtx.globalAlpha = fade;
         mainCtx.fillStyle = 'black';
         mainCtx.beginPath()
         mainCtx.rect(-mainCanvas.width / 2, -mainCanvas.height / 2, mainCanvas.width, mainCanvas.height);
