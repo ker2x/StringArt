@@ -32,7 +32,7 @@ function draw() {
         counter = 0;
         r = Math.random();
         r2 = Math.random();
-        mainCtx.globalAlpha = 0.05;
+        mainCtx.globalAlpha = 0.02;
         mainCtx.fillStyle = 'black';
         mainCtx.beginPath()
         mainCtx.rect(-mainCanvas.width / 2, -mainCanvas.height / 2, mainCanvas.width, mainCanvas.height);
