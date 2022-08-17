@@ -68,7 +68,7 @@ function draw() {
             if(Math.random() < 1/3) {
                 mainCtx.strokeStyle = "red";
             } else if(Math.random() < 2/3) {
-                mainCtx.strokeStyle = "green";
+                mainCtx.strokeStyle = "yellow";
             } else {
                 mainCtx.strokeStyle = "blue";
             }
