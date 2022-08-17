@@ -14,7 +14,7 @@ btn.addEventListener('click', event => {
 
 const mainCtx = mainCanvas.getContext('2d');
 let counter = 0;
-let count = 500;
+let maxCount = 500;
 let r, r2;
 
 let param1 = 1;
@@ -30,7 +30,7 @@ function setup() {
     mainCtx.translate(mainCanvas.width / 2, mainCanvas.height / 2);
 
     mainCtx.strokeStyle = 'white';
-    mainCtx.lineWidth = 1;
+    mainCtx.lineWidth = 0.2;
     mainCtx.globalAlpha = 0.01;
 
     r = Math.random() * 4;
@@ -41,8 +41,10 @@ function setup() {
     param2 = form.elements[1].value;
     param3 = form.elements[2].value;
     param4 = form.elements[3].value;
-    alternate = form.elements[4].checked;
-    console.log(param1, param2, param3, param4, alternate);
+    maxCount = form.elements[4].value;
+    alternate = form.elements[5].checked;
+    counter = 0;
+    console.log(param1, param2, param3, param4, maxCount, alternate);
 
     requestAnimationFrame(draw);
 }
@@ -50,7 +52,7 @@ function setup() {
 function draw() {
 
 
-    if(counter >  count) {
+    if(counter >  maxCount) {
         counter = 0;
         r = Math.random() * 4;
         r2 = Math.random() * 4;

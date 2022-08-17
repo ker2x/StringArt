@@ -8,16 +8,21 @@
 </head>
 <body>
 <canvas id="mainCanvas"></canvas>
-
+<div>
+- if time1 == time2 && time3 == time4 you get a circle.<br>
+- Everything else is up to you. (lower value = faster rotation)<br>
+- alternate color alternate between white and black.<br>
 <form id="form">
-    <input type="text" name="time1" value="2000">
-    <input type="text" name="time2" value="2000">
-    <input type="text" name="time3" value="1000">
-    <input type="text" name="time4" value="1000">
-    <input type="checkbox" name="alternate" unchecked> alternate color
+    time1 : <input type="text" name="time1" value="2000"><br>
+    time2 : <input type="text" name="time2" value="2000"><br>
+    time3 : <input type="text" name="time3" value="1000"><br>
+    time4 : <input type="text" name="time4" value="1000"><br>
+    #lines per cycle : <input type="text" name="cycle" value="500"><br>
+    alternate color : <input type="checkbox" name="alternate" unchecked><br>
 </form>
+<br>
 <button id="btn">reset</button>
-
+</div>
 <!-- main script -->
 <script src="main.js"></script>
 </body>
