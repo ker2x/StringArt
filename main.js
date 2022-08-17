@@ -73,7 +73,7 @@ function draw() {
                 mainCtx.strokeStyle = "blue";
             }
             if(Math.random() < 1/4) {
-            mainCtx.strokeStyle = Math.random() > 0.5 ? 'black' : 'white';
+            mainCtx.strokeStyle = Math.random() > 0.8 ? 'black' : 'white';
             }
         } else {
             mainCtx.strokeStyle = 'white';
