@@ -22,6 +22,7 @@ let param1 = 1;
 let param2 = 1;
 let param3 = 1;
 let param4 = 1;
+let speed = 1;
 
 setup();
 
@@ -45,9 +46,10 @@ function setup() {
     maxCount = form.elements[4].value;
     fade = form.elements[5].value;
     mainCtx.lineWidth = form.elements[6].value;
-    alternate = form.elements[7].checked;
+    speed = form.elements[7].value;
+    alternate = form.elements[8].checked;
     counter = 0;
-    console.log(param1, param2, param3, param4, maxCount, fade, mainCtx.lineWidth, alternate);
+    console.log(param1, param2, param3, param4, maxCount, fade, mainCtx.lineWidth, speed, alternate);
 
     requestAnimationFrame(draw);
 }
@@ -81,10 +83,11 @@ function draw() {
     }
     mainCtx.globalAlpha = 0.1 + Math.random() * 0.1;
 
-    mainCtx.beginPath();
-        x = Math.sin( (counter / param1) + (r  * Math.PI)) * (mainCanvas.width  / 2);
-        y = Math.cos( (counter / param2) + (r  * Math.PI)) * (mainCanvas.height / 2);
-        x2 = Math.sin((counter / param3) + (r2 * Math.PI)) * (mainCanvas.width  / 2);
+    for(let i = 0; i < speed; i++) {
+        mainCtx.beginPath();
+        x = Math.sin((counter / param1) + (r * Math.PI)) * (mainCanvas.width / 2);
+        y = Math.cos((counter / param2) + (r * Math.PI)) * (mainCanvas.height / 2);
+        x2 = Math.sin((counter / param3) + (r2 * Math.PI)) * (mainCanvas.width / 2);
         y2 = Math.cos((counter / param4) + (r2 * Math.PI)) * (mainCanvas.height / 2);
 
         mainCtx.moveTo(x, y);
@@ -92,11 +95,12 @@ function draw() {
         mainCtx.lineTo(-x, -y);
         mainCtx.lineTo(x2, y2);
         mainCtx.lineTo(x, y);
-    mainCtx.stroke();
+        mainCtx.stroke();
 
 //    mainCtx.restore();
 
-    counter++;
+        counter++;
+    }
     // call this function again next frame
     requestAnimationFrame(draw);
 }

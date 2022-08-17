@@ -15,6 +15,7 @@
 - (but you can have all 4 values totally different)<br>
 - "alternate color" randomly alternate line color between r/y/b/w/b.<br>
 - very small line width = very smooth.<br>
+- #line per frame : higher is faster but less smooth. (should be less than #line per frame. 1 is ideal)<br>
 <form id="form">
     time1 : <input type="text" name="time1" value="50"><br>
     time2 : <input type="text" name="time2" value="50"><br>
@@ -23,7 +24,8 @@
     #lines per cycle : <input type="text" name="cycle" value="1000"><br>
     fade per cycle : <input type="text" name="fade" value="0.05"><br>
     line width : <input type="text" name="lw" value="0.15"><br>
-    alternate color : <input type="checkbox" name="alternate" checked><br>
+    #line per frame : <input type="text" name="speed" value="2"><br>
+    alternate color : <input type="checkbox" name="alternate"><br>
 </form>
 <br>
 <button id="btn">reset</button>
