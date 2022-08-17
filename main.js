@@ -62,7 +62,16 @@ function draw() {
         mainCtx.rect(-mainCanvas.width / 2, -mainCanvas.height / 2, mainCanvas.width, mainCanvas.height);
         mainCtx.fill();
         if(alternate) {
+            if(Math.random() < 1/3) {
+                mainCtx.strokeStyle = "red";
+            } else if(Math.random() < 2/3) {
+                mainCtx.strokeStyle = "green";
+            } else {
+                mainCtx.strokeStyle = "blue";
+            }
+            if(Math.random() < 1/4) {
             mainCtx.strokeStyle = Math.random() > 0.5 ? 'black' : 'white';
+            }
         } else {
             mainCtx.strokeStyle = 'white';
         }
@@ -70,10 +79,6 @@ function draw() {
     mainCtx.globalAlpha = 0.1 + Math.random() * 0.1;
 
     mainCtx.beginPath();
-//        x = Math.sin( (window.performance.now() / param1) + (r  * Math.PI)) * (mainCanvas.width  / 2);
-//        y = Math.cos( (window.performance.now() / param2) + (r  * Math.PI)) * (mainCanvas.height / 2);
-//        x2 = Math.sin((window.performance.now() / param3) + (r2 * Math.PI)) * (mainCanvas.width  / 2);
-//        y2 = Math.cos((window.performance.now() / param4) + (r2 * Math.PI)) * (mainCanvas.height / 2);
         x = Math.sin( (counter / param1) + (r  * Math.PI)) * (mainCanvas.width  / 2);
         y = Math.cos( (counter / param2) + (r  * Math.PI)) * (mainCanvas.height / 2);
         x2 = Math.sin((counter / param3) + (r2 * Math.PI)) * (mainCanvas.width  / 2);
